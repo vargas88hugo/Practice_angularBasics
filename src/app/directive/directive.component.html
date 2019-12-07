@@ -1,0 +1,9 @@
+<button type='button' class='btn btn-secondary my-3' (click)='setEnable()'>{{ (enable == true) ? 'Hide  ' : 'Show' }}</button>
+<div class="card">
+    <div class="card-header">
+        List of Technologies
+    </div>
+    <ul class="list-group" *ngIf='enable == true'>
+        <li class='list-group-item' *ngFor="let item of listTech">{{ item }}</li>
+    </ul>
+</div>
