@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Spring-Angular-one';
+  title:string = 'Spring-Angular practice';
+
+  topic:string = 'Basic Angular-Spring 01';
+  author:any = {
+    firstName: 'Hugo',
+    lastName: 'Vargas'
+  };
 }
