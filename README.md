@@ -1,6 +1,6 @@
-# SpringAngularOne
+# Angular Basics
 
-This project is a practice to learn Angular and Spring frameworks
+This project is a practice to learn Angular framework
 
 ## Development server
 
