@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ClientService } from './clients/client.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ClientService } from './clients/client.service';
     ClientsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]

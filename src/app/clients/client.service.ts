@@ -10,15 +10,19 @@ import { CLIENTS } from './clients.json';
 import { Client } from './client';
 import { Observable } from 'rxjs'; // Class that provides support for passing messages between publishers and subscribers
 import { of } from 'rxjs'; // Method that converts a variable to an observable
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientService {
 
-  constructor() { }
+  private urlEndpoint: string = 'http://localhost:8080/api/clientes';
+
+  constructor(private http: HttpClient) { }
 
   getClients(): Observable<Client[]> {
-    return of(CLIENTS);
+    // return of(CLIENTS);
+    return this.http.get<Client[]>(this.urlEndpoint);
   }
 }
