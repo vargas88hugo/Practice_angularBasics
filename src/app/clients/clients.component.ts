@@ -18,7 +18,10 @@ export class ClientsComponent implements OnInit {
    */
   ngOnInit() {
     this.clientService.getClients().subscribe( // subscribe is a method that executes and updates the observable
-      clients => this.clients = clients // anonymous function
+      clients => {
+        console.log(clients);
+        return this.clients = clients // anonymous function
+      }
     );
   }
 
