@@ -8,6 +8,17 @@ import { DirectiveComponent } from './directive/directive.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ClientService } from './clients/client.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './clients/form.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {path: 'directives', component: DirectiveComponent},
+  {path: 'clients', component: ClientsComponent},
+  {path: 'form', component: FormComponent},
+  {path: '', redirectTo: '/clients', pathMatch: 'full'},
+  {path: '**', pathMatch: 'full', redirectTo: 'clients'}
+]
 
 @NgModule({
   declarations: [
@@ -15,11 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     DirectiveComponent,
-    ClientsComponent
+    ClientsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]
